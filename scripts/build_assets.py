@@ -36,12 +36,12 @@ def ticks(w, h, inset=14, size=16, color=AMBER):
 # ---------------------------------------------------------------- typed lines
 # (command, trailing comment) pairs; the comment is drawn dimmer, like a real shell line
 phrases = [
-    ('python -c "import statistics"', "# always before import torch"),
-    ("grep -ri lookahead lakehouse/", "# 0 matches, by design"),
+    ("docker build .", "# works on your machine too"),
     ("SELECT * FROM assumptions WHERE tested = false;", "-- 0 rows"),
+    ("curl -s api/health | jq .status", '# "boring", as intended'),
     ("claude --tools sql,calc --verify", "# every number has a receipt"),
+    ("git bisect run pytest -q", "# let the machine find it"),
     ("aws sso login && az login", "# fluent in both clouds"),
-    ("ls ~/weekends", "# leviathan/  leviathan/  leviathan/"),
 ]
 PER = 5.2                      # seconds each line is on screen
 CYCLE = PER * len(phrases)
