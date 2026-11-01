@@ -35,11 +35,11 @@ def ticks(w, h, inset=14, size=16, color=AMBER):
 
 # ---------------------------------------------------------------- typed lines
 phrases = [
-    "forward-deployed: requirements come from the people using it",
-    "statistics before the framework; the model is the last step",
-    "enterprise LLM systems with guardrails, citations, audit trails",
-    "data infrastructure end to end: lakehouse to executive dashboard",
-    "every figure comes from a calculator, never from the model",
+    "built next to the people who use it, scoping through rollout",
+    "quantitative first: statistics, time series, neural networks",
+    "production RAG and agents that pass compliance review",
+    "data engineering and analytics as one discipline",
+    "end-to-end ownership: requirements, terraform, ci/cd, rollout",
 ]
 PER = 5.2                      # seconds each line is on screen
 CYCLE = PER * len(phrases)

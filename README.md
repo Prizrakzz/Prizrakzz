@@ -21,7 +21,7 @@ works_on:     [enterprise LLM systems, predictive modeling, data platforms, MLOp
 clouds:       [AWS, Azure]
 day_job:      AI & Information Management Officer, Tekiyet Um Ali (200+ staff NGO)
 before_that:  AI & Advanced Data Analytics, Arab Bank
-after_hours:  Leviathan Research, below
+after_hours:  Leviathan Research, an AI research terminal for agricultural commodities (solo, AWS)
 degree:       B.Sc. Data Science & Artificial Intelligence, PSUT, 2025
 certified:    AWS Certified Machine Learning Associate, 2026
 speaks:       [English, Arabic]
@@ -31,58 +31,12 @@ speaks:       [English, Arabic]
 
 ## How I work
 
-**Forward-deployed.** Requirements come from the people who will use the system. At Tekiyet Um Ali I sit with procurement, MEAL, HR and communications, turn their week into scoped, prioritized use cases, and ship into the tools already open on their desks: Teams, SharePoint, Dynamics 365. First solution live within six weeks of joining; 100+ monthly active users across four departments today.
-
-**Statistics before the framework.** My background runs through quantitative finance and regulated banking, so the questions come first: what the distribution looks like, where the leakage is, what a backtest is allowed to see. Then the model: gradient-boosted ensembles with SHAP for attribution, neural networks in PyTorch and TensorFlow, embeddings and NLP. When a number matters I want it from a deterministic calculator that the model reads and never produces.
-
-**Enterprise LLM systems that survive an audit.** RAG over 100,000+ SharePoint documents with hybrid retrieval in Azure AI Search and cited answers inside Teams. A SQL agent over the Dynamics 365 CRM, an OCR pipeline, a web-search agent, and Logic Apps automation that returns an estimated 30+ staff-hours per department each month. At Arab Bank, a LangGraph agent with intent classification, guardrails, citation-tracked RAG and a full decision audit trail; chunking strategies benchmarked against retrieval precision; quantization and pruning prototyped for inference cost. PII masking, data residency and an on-premises server for restricted workloads are design inputs on day one.
-
-**Data infrastructure, both halves.** Engineering and analytics are one job. Lakehouse design with schema contracts, units and knowledge dates; point-in-time modeling so nothing downstream can see the future; Step Functions and EventBridge orchestration, Spark and dbt transforms, Postgres and pgvector for serving, Snowflake and Redshift for warehousing. On the analytics side, anomaly detection and customer segmentation on sensitive banking data, and executive Power BI with drill-through, cohort analysis and DAX measures.
-
-**Product owner as well as engineer.** Sole owner across the full SDLC and LLMOps lifecycle: requirements, prioritization, architecture, dev, staging and prod environments, security review with IT, rollout, handover. I measure the work in staff-hours returned to a department and in compute dollars not spent.
-
-<img src="assets/divider.svg" width="100%" alt="">
-
-## Leviathan Research
-
-> My own project, 2026 to present: a point-in-time research terminal for 30+ agricultural commodities and their futures. A data platform with as-of discipline, a causal knowledge graph and reasoning engine, and an analyst-facing terminal. Built solo on AWS, reproducible from code.
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#15181c", "primaryTextColor": "#e6e4e1", "primaryBorderColor": "#3a3f47", "lineColor": "#8a8f98", "secondaryColor": "#101215", "tertiaryColor": "#101215", "clusterBkg": "#0b0c0e", "clusterBorder": "#262a30", "edgeLabelBackground": "#0b0c0e", "fontFamily": "IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif"}}}%%
-flowchart LR
-  subgraph SRC["20+ sources"]
-    direction TB
-    A1["Databento futures"]
-    A2["NASA · CHIRPS · ENSO"]
-    A3["USDA · exchanges · reports"]
-  end
-  subgraph LAKE["Point-in-time lakehouse"]
-    direction TB
-    B1["Step Functions · EventBridge · AWS Batch"]
-    B2[("S3 medallion lake")]
-    B3[("Postgres gold · pgvector")]
-  end
-  subgraph BRAIN["Reasoning engine"]
-    direction TB
-    C1["Causal knowledge graph"]
-    C2["Blackboard · as-of state"]
-    C3["Claude tool-use agent"]
-    C4["Claim-level verifier"]
-  end
-  UI["React · TypeScript terminal<br/>SSE streaming · cited sources"]
-  A1 & A2 & A3 --> B1 --> B2 --> B3 --> C2
-  C1 --> C2 --> C3 --> C4 --> UI
-  classDef amber stroke:#f5a623,stroke-width:1.5px;
-  class C3,UI amber;
-```
-
-| | |
-|---|---|
-| **Point-in-time lakehouse** | Daily Step Functions and EventBridge pipelines ingest 20+ sources into an S3 medallion lake. Every table carries a schema contract, units and knowledge dates, and a rebuild gate blocks bad snapshots, so no query can see data that did not exist on its as-of date and research is backtestable without lookahead bias. Heavy jobs run on AWS Batch Fargate Spot at roughly 60% lower compute cost; gold is mirrored to Postgres for sub-second reads. |
-| **Document intelligence** | Five decades of USDA, GAIN, WASDE and exchange reports extracted via the Anthropic Batch API into 1M+ dated, source-cited propositions. Embedded in-VPC with bge-m3, indexed per commodity and driver in pgvector with hybrid search and Cohere reranking. Refreshes deduplicate by content hash, and write guards reject any update that shrinks existing coverage. |
-| **Causal reasoning** | A per-commodity causal knowledge graph: drivers with sign, lag and confidence, each bound to its measuring series, linked across markets by price-transmission, processing and substitution edges. A blackboard holds every driver's deterministic as-of state; one walk traverses the chains upstream and downstream and surfaces convergence, cross-market spillovers and historical analogs, replacing about two hours of manual research per question. |
-| **Verified LLM agents** | A Claude tool-use agent plans lookups over typed data series. SQL is generated deterministically, every statistic comes from a shared calculator, and a claim-level verifier strips any figure the record does not back. It catches about 3% of drafted figures, which is the point. |
-| **Shipping it** | Terraform with plan gates, GitHub Actions CI/CD with digest-pinned images, feature-flagged dark launches gated on a blind expert panel answering real analyst questions. The terminal streams over SSE with p95 stream start under 2 seconds, metered on a DynamoDB credit ledger. |
+- **Forward-deployed.** I build next to the people who will use the system, from scoping with department heads through rollout and handover.
+- **Quantitative first.** Statistics, time series and neural networks are the foundation; the framework is chosen after the question is framed. Gradient boosting with SHAP, PyTorch, TensorFlow, embeddings and NLP.
+- **Production LLM systems.** RAG, agents and guardrails designed to pass compliance review: hybrid retrieval, cited answers, audit trails, PII masking, data residency. Azure OpenAI, Azure AI Search, LangGraph, Claude API and Bedrock.
+- **Data engineering and analytics, one discipline.** Lakehouse design, point-in-time modeling, pipeline orchestration on AWS and Azure, Snowflake and Redshift warehousing, and the executive dashboards on top.
+- **End-to-end ownership.** Requirements, architecture, Terraform, CI/CD, security review, rollout. Measured in staff-hours returned and compute spend avoided.
+- **After hours.** Leviathan Research, a point-in-time research terminal for agricultural commodities: causal knowledge graph, claim-verified Claude agents, 20-source lakehouse, built solo on AWS.
 
 <img src="assets/divider.svg" width="100%" alt="">
 
