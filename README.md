@@ -31,12 +31,12 @@ speaks:       [English, Arabic]
 
 ## How I work
 
-- **Forward-deployed.** I build next to the people who will use the system, from scoping with department heads through rollout and handover.
-- **Quantitative first.** Statistics, time series and neural networks are the foundation; the framework is chosen after the question is framed. Gradient boosting with SHAP, PyTorch, TensorFlow, embeddings and NLP.
-- **Production LLM systems.** RAG, agents and guardrails designed to pass compliance review: hybrid retrieval, cited answers, audit trails, PII masking, data residency. Azure OpenAI, Azure AI Search, LangGraph, Claude API and Bedrock.
-- **Data engineering and analytics, one discipline.** Lakehouse design, point-in-time modeling, pipeline orchestration on AWS and Azure, Snowflake and Redshift warehousing, and the executive dashboards on top.
-- **End-to-end ownership.** Requirements, architecture, Terraform, CI/CD, security review, rollout. Measured in staff-hours returned and compute spend avoided.
-- **After hours.** Leviathan Research, a point-in-time research terminal for agricultural commodities: causal knowledge graph, claim-verified Claude agents, 20-source lakehouse, built solo on AWS.
+- **Forward-deployed.** I would rather sit with the people who will use the thing than guess from a ticket. Scoping with department heads, shipping into the tools they already have open, handing over something that gets used on a Tuesday.
+- **Quantitative first.** Statistics, time series and neural networks are the part I enjoy most; the framework gets picked once the question is framed. Gradient boosting with SHAP, PyTorch, TensorFlow, embeddings and NLP.
+- **Production LLM systems.** RAG, agents and guardrails built to survive a compliance review, which is more fun than it sounds: hybrid retrieval, cited answers, audit trails, PII masking, data residency. Azure OpenAI, Azure AI Search, LangGraph, Claude API and Bedrock.
+- **Data engineering and analytics, one discipline.** Lakehouses that know what they knew and when, pipelines on AWS and Azure, Snowflake and Redshift warehousing, and dashboards executives actually open.
+- **End-to-end ownership.** Requirements, architecture, Terraform, CI/CD, security review, rollout. I like owning the whole arc, and I keep score in staff-hours returned and compute spend avoided.
+- **Weekends.** Leviathan Research: a point-in-time research terminal for agricultural commodities, with a causal knowledge graph and Claude agents that have to show their work. Built solo on AWS, mostly for the fun of it.
 
 <img src="assets/divider.svg" width="100%" alt="">
 
@@ -152,4 +152,4 @@ speaks:       [English, Arabic]
   </picture>
 </div>
 
-<img src="assets/footer.svg" width="100%" alt="Open to ML systems, LLM agents and data platform work">
+<img src="assets/footer.svg" width="100%" alt="cat ~/.plan: teach models to show their work; make data admit what it knew, and when; ship it">

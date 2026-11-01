@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-label="Open to ML systems, LLM agents and data platform work">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-label="cat ~/.plan: teach models to show their work; make data admit what it knew, and when; ship it">
 <rect width="1200" height="104" rx="6" fill="#0b0c0e"/>
 <rect x="0.5" y="0.5" width="1199" height="103" rx="6" fill="none" stroke="#262a30"/>
 <path d="M12 24V12H24  M1176 12H1188V24  M12 80V92H24  M1176 92H1188V80" fill="none" stroke="#f5a623" stroke-width="1.5" stroke-opacity="0.9"/>
-<text x="60" y="38" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="11" letter-spacing="3" fill="#f5a623">05 / CONTACT</text>
-<line x1="168" y1="34" x2="1140" y2="34" stroke="#262a30"/>
-<text x="60" y="72" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="16" fill="#f5a623">$ <tspan fill="#e6e4e1">open to ML systems, LLM agents and data platform work</tspan><tspan fill="#f5a623">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan></text>
-<text x="1140" y="72" text-anchor="end" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="11" letter-spacing="2" fill="#5c6168">GITHUB.COM/PRIZRAKZZ</text>
+<text x="60" y="32" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="11" letter-spacing="3" fill="#f5a623">05 / PLAN</text>
+<line x1="150" y1="28" x2="1140" y2="28" stroke="#262a30"/>
+<text x="60" y="60" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="15" fill="#f5a623">$ <tspan fill="#e6e4e1">cat ~/.plan</tspan></text>
+<text x="60" y="84" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="14" fill="#8a8f98">teach models to show their work<tspan fill="#262a30">  ·  </tspan>make data admit what it knew, and when<tspan fill="#262a30">  ·  </tspan>ship it<tspan fill="#f5a623">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+<text x="1140" y="84" text-anchor="end" font-family="'IBM Plex Mono','JetBrains Mono','Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="11" letter-spacing="2" fill="#5c6168">GITHUB.COM/PRIZRAKZZ</text>
 </svg>

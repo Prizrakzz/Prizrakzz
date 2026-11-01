@@ -34,12 +34,14 @@ def ticks(w, h, inset=14, size=16, color=AMBER):
 
 
 # ---------------------------------------------------------------- typed lines
+# (command, trailing comment) pairs; the comment is drawn dimmer, like a real shell line
 phrases = [
-    "built next to the people who use it, scoping through rollout",
-    "quantitative first: statistics, time series, neural networks",
-    "production RAG and agents that pass compliance review",
-    "data engineering and analytics as one discipline",
-    "end-to-end ownership: requirements, terraform, ci/cd, rollout",
+    ('python -c "import statistics"', "# always before import torch"),
+    ("grep -ri lookahead lakehouse/", "# 0 matches, by design"),
+    ("SELECT * FROM assumptions WHERE tested = false;", "-- 0 rows"),
+    ("claude --tools sql,calc --verify", "# every number has a receipt"),
+    ("aws sso login && az login", "# fluent in both clouds"),
+    ("ls ~/weekends", "# leviathan/  leviathan/  leviathan/"),
 ]
 PER = 5.2                      # seconds each line is on screen
 CYCLE = PER * len(phrases)
@@ -47,9 +49,9 @@ TYPE_S, HOLD_END_S, OFF_S = 1.9, PER - 0.35, PER - 0.3
 k_type, k_hold, k_off = TYPE_S / CYCLE, HOLD_END_S / CYCLE, OFF_S / CYCLE
 TX, TY, FS = 60, 232, 16
 typed_defs, typed_body = [], []
-for i, p in enumerate(phrases):
+for i, (cmd, note) in enumerate(phrases):
     begin = i * PER
-    w = int((len(p) + 2) * 10.0 + 30)
+    w = int((len(cmd) + len(note) + 5) * 10.0 + 30)
     typed_defs.append(
         f'<clipPath id="tc{i}"><rect x="{TX}" y="{TY - 22}" width="0" height="32">'
         f'<animate attributeName="width" values="0;{w};{w};0;0" keyTimes="0;{k_type:.4f};{k_hold:.4f};{k_off:.4f};1" '
@@ -58,8 +60,9 @@ for i, p in enumerate(phrases):
     typed_body.append(
         f'<g opacity="0" clip-path="url(#tc{i})">'
         f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;{k_hold:.4f};{k_off:.4f};1" dur="{CYCLE}s" begin="{begin}s" repeatCount="indefinite"/>'
-        f'<text x="{TX}" y="{TY}" font-family="{MONO}" font-size="{FS}" fill="{AMBER}">$ '
-        f'<tspan fill="{TEXT}">{esc(p)}</tspan>'
+        f'<text x="{TX}" y="{TY}" font-family="{MONO}" font-size="{FS}" fill="{AMBER}" xml:space="preserve">$ '
+        f'<tspan fill="{TEXT}">{esc(cmd)}</tspan>'
+        f'<tspan fill="{DIM}">  {esc(note)}</tspan>'
         f'<tspan fill="{AMBER}">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan>'
         f'</text></g>'
     )
@@ -192,14 +195,15 @@ header = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width
 </svg>
 '''
 
-footer = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-label="Open to ML systems, LLM agents and data platform work">
+footer = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-label="cat ~/.plan: teach models to show their work; make data admit what it knew, and when; ship it">
 <rect width="1200" height="104" rx="6" fill="{BG}"/>
 <rect x="0.5" y="0.5" width="1199" height="103" rx="6" fill="none" stroke="{HAIR}"/>
 {ticks(1200, 104, inset=12, size=12)}
-<text x="60" y="38" font-family="{MONO}" font-size="11" letter-spacing="3" fill="{AMBER}">05 / CONTACT</text>
-<line x1="168" y1="34" x2="1140" y2="34" stroke="{HAIR}"/>
-<text x="60" y="72" font-family="{MONO}" font-size="16" fill="{AMBER}">$ <tspan fill="{TEXT}">open to ML systems, LLM agents and data platform work</tspan><tspan fill="{AMBER}">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan></text>
-<text x="1140" y="72" text-anchor="end" font-family="{MONO}" font-size="11" letter-spacing="2" fill="{DIM}">GITHUB.COM/PRIZRAKZZ</text>
+<text x="60" y="32" font-family="{MONO}" font-size="11" letter-spacing="3" fill="{AMBER}">05 / PLAN</text>
+<line x1="150" y1="28" x2="1140" y2="28" stroke="{HAIR}"/>
+<text x="60" y="60" font-family="{MONO}" font-size="15" fill="{AMBER}">$ <tspan fill="{TEXT}">cat ~/.plan</tspan></text>
+<text x="60" y="84" font-family="{MONO}" font-size="14" fill="{MUTED}">teach models to show their work<tspan fill="{HAIR}">  ·  </tspan>make data admit what it knew, and when<tspan fill="{HAIR}">  ·  </tspan>ship it<tspan fill="{AMBER}">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+<text x="1140" y="84" text-anchor="end" font-family="{MONO}" font-size="11" letter-spacing="2" fill="{DIM}">GITHUB.COM/PRIZRAKZZ</text>
 </svg>
 '''
 
